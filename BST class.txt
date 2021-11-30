@@ -1,0 +1,110 @@
+class BinaryTreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+class BST:
+    
+    def __init__(self):
+        self.root = None
+        self.numNodes = 0
+    
+    
+    def printTree(self):
+        pass
+
+    def __init__(self, data):
+
+        self.data = data
+
+        self.left = None
+
+        self.right = None
+
+class BST:
+
+    
+
+    def __init__(self):
+
+        self.root = None
+
+        self.numNodes = 0
+
+        
+
+    def printTreeHelper(self,root):
+
+        if root==None:
+
+            return 
+
+        print(root.data,end=':')
+
+        if(root.left!=None):
+
+            print('L',end=':')
+
+            print(root.left.data,end=',')
+
+        if(root.right!=None):
+
+            print('R',end=':')
+
+            print(root.right.data,end='')
+
+        print()
+
+        self.printTreeHelper(root.left)
+
+        self.printTreeHelper(root.right)
+
+    
+
+    def printTree(self):
+
+        self.printTreeHelper(self.root)
+
+        
+
+    def searchHelper(self,root,data):
+
+        if root==None:
+
+            return False
+
+        if root.data==data:
+
+            return True
+
+        if root.data>data:
+
+            return self.searchHelper(root.left,data)
+
+        return self.searchHelper(root.right,data)
+
+            
+
+    def search(self, data):
+
+        return self.searchHelper(self.root,data)
+
+	
+
+    def insertHelper(self,root,data):
+
+        if root==None:
+
+            self.root=BinaryTreeNode(data)
+
+            return 
+
+        if root.data<data:
+
+            if root.right==None:
+
+                root.right = BinaryTreeNode(data)
+
+                self.numNodes += 1
+
+                return 
